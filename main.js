@@ -49,17 +49,18 @@ const generateHint = (guess) =>  {
       }
     }
   }
-  let hintString = `${correctLetterLocations}-${correctLetters}`;
-  return hintString;
+  return correctLetterLocations + '-' + correctLetters;
 }
 
 
 const mastermind = (guess) => {
-  solution = 'abcd'; // Comment this out to generate a random solution
+// Comment this out to generate a random solution
   // your code here
   if (guess === solution) {
     return 'You guessed it!';
   }
+  let hint = guess + generateHint(guess);
+  board.push(hint);
 }
 
 
